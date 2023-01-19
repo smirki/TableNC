@@ -1,26 +1,51 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MainTable());
-}
+void main() => runApp(const MyApp());
 
-class MainTable extends StatelessWidget {
-  const MainTable({Key? key}) : super(key: key);
+/// main application widget
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'Table NC';
 
   @override
   Widget build(BuildContext context) {
-    // Material App
     return MaterialApp(
-
-        // Scaffold Widget
-        home: Scaffold(
-      appBar: AppBar(
-        // AppBar takes a Text Widget
-        // in it's title parameter
-        title: const Text('Table NC'),
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const MyStatelessWidget(),
       ),
-      body: const Center(child: Text('Swipe to next screen')),
-      Checkbox(value: false, onChanged: null),
-    ));
+    );
+  }
+}
+
+/// stateless widget that the main application instantiates
+class MyStatelessWidget extends StatelessWidget {
+  const MyStatelessWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const SizedBox(height: 30),
+        Text('Welcome to TableNC'),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton(
+              onPressed: () {},
+              child: const Text('Yes'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text('No'),
+            ),
+          ],
+        )
+      ],
+    );
   }
 }

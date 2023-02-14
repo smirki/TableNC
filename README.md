@@ -1,8 +1,6 @@
 
 # Table NC App
 
-![Navbar](display_images/navbar_built.gif)
-
 ## Description
 
 The Table NC App is designed to help users request food delivery or nutrition education, learn about volunteering opportunities, access nutrition curriculum and recipes, and donate to Table NC.
@@ -35,4 +33,8 @@ This app is licensed under the Apache-2.0.
 
 ## Contact
 
-For any inquiries, please contact Table NC at [insert contact email or phone number here].
+For any inquiries, please contact Table NC.
+
+## App Screens
+
+![Navbar](display_images/navbar_built.gif)

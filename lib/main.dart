@@ -13,7 +13,104 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: MainProgramPage(),
+    );
+  }
+}
+
+class MainProgramPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+                'This is the Main Page. Are you interested in Getting Food or Getting Advice?'),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              child: Text('Get Food'),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NutritionEducationPage()));
+              },
+              child: Text('Get Advice'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FoodProgramPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text('Request Food Delivery'),
+                  content: Text(
+                      'Please enter your details to request food delivery.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text('Cancel'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle form submission
+                      },
+                      child: Text('Submit'),
+                    ),
+                  ],
+                );
+              },
+            );
+          },
+          child: Text('Sign-up'),
+        ),
+      ),
+    );
+  }
+}
+
+class NutritionEducationPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Welcome to this page'),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Handle button press
+              },
+              child: Text('Request Educational Information'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -27,6 +124,7 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _children = [
+    MainProgramPage(),
     FoodProgramPage(),
     NutritionEducationPage(),
     VolunteerPage(),
@@ -54,6 +152,10 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
+            icon: Icon(Icons.abc),
+            label: 'Main Page',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.fastfood),
             label: 'Food Program',
           ),
@@ -79,24 +181,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class FoodProgramPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('This is the Food Program page'),
-    );
-  }
-}
-
-class NutritionEducationPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('This is the Nutrition Education page'),
     );
   }
 }

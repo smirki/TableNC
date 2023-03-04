@@ -24,7 +24,7 @@ class GuestSignInPage extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/background.jpg'),
+                  image: AssetImage('assets/images/ev.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -33,9 +33,9 @@ class GuestSignInPage extends StatelessWidget {
               children: [
                 SizedBox(height: 100.0),
                 Text(
-                  'Welcome, Guest!',
+                  'Get access to health info and help in your area.',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                   ),

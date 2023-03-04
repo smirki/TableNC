@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tablenc/guest_login.dart';
+import 'package:tablenc/home.dart';
 import 'signin.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
         title: Text(
           'BlueCare Aware',
           style: TextStyle(
-            color: Colors.blue,
+            color: Colors.black87,
             fontWeight: FontWeight.bold,
             fontSize: 24.0,
           ),
@@ -29,20 +29,31 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       body: Container(
-        color: Colors.grey[800],
+        padding: EdgeInsets.all(20.0),
+        color: Color(0xFFF3F3F3),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              'https://via.placeholder.com/150',
-              width: 150.0,
+            Icon(
+              Icons.lightbulb,
+              color: Colors.blue,
+              size: 150.0,
             ),
             SizedBox(height: 20.0),
             Text(
-              'BlueCare Aware\nLet health and wellness meet you where you are',
+              'BlueCare Aware',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 38.0,
+              ),
+            ),
+            Text(
+              'Let health and wellness meet you where you are',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0,
               ),
@@ -51,6 +62,19 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               child: Text('Register'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+                minimumSize: Size(double.infinity, 50.0),
+                padding: EdgeInsets.symmetric(vertical: 15.0),
+                textStyle: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
+              ),
             ),
             SizedBox(height: 10.0),
             ElevatedButton(
@@ -61,6 +85,19 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: Text('Sign In'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+                minimumSize: Size(double.infinity, 50.0),
+                padding: EdgeInsets.symmetric(vertical: 15.0),
+                textStyle: TextStyle(
+                  color: Colors.grey[800],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
+              ),
             ),
             SizedBox(height: 10.0),
             ElevatedButton(
@@ -71,6 +108,19 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: Text('Sign In as Guest'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+                minimumSize: Size(double.infinity, 50.0),
+                padding: EdgeInsets.symmetric(vertical: 15.0),
+                textStyle: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
+              ),
             ),
           ],
         ),

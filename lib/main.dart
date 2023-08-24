@@ -114,8 +114,8 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 minimumSize: Size(double.infinity, 50.0),
-                padding: EdgeInsets.symmetric(vertical: 15.0),
-                textStyle: TextStyle(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                textStyle: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
